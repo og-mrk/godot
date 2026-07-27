@@ -219,6 +219,7 @@ EditorPropertyVectorN::EditorPropertyVectorN(Variant::Type p_type, bool p_force_
 		if (horizontal) {
 			spin[i]->set_h_size_flags(SIZE_EXPAND_FILL);
 		}
+		spin[i]->set_custom_minimum_size(Size2(spin[i]->get_minimum_size().height * 2.5 * EDSCALE, 0));
 		spin[i]->connect(SceneStringName(value_changed), callable_mp(this, &EditorPropertyVectorN::_value_changed).bind(String(COMPONENT_LABELS[i])));
 		add_focusable(spin[i]);
 	}
